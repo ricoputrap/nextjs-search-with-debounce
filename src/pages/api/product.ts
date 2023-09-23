@@ -13,9 +13,13 @@ export default function handler(
 
   const searchQuery: string = (req.query.search as string) || "";
 
-  const filteredProducts = dummyFoodProducts.filter((product) => {
-    return product.name.toLowerCase().includes(searchQuery.toLowerCase());
-  });
+  const filteredProducts = dummyFoodProducts
+    .filter((product) => {
+      return product.name
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+    })
+    .slice(0, 40);
 
   return res.json({
     data: filteredProducts
