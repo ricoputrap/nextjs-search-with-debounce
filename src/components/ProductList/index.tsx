@@ -1,15 +1,14 @@
+import useData from '@/hooks/useData'
 import useProductContext from '@/hooks/useProductContext'
 import React from 'react'
 
 const ProductList: React.FC = () => {
-  const {
-    state: { data }
-  } = useProductContext();
+  const data = useData();
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 w-full">
       {data.map((item) => (
-        <div key={item.id} className="bg-slate-100 p-2 w-96 rounded-lg">
+        <div key={item.id} className="bg-gray-100 p-2 rounded-lg">
           { item.name }
         </div>
       ))}
