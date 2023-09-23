@@ -1,13 +1,13 @@
 import { dummyFoodProducts, Product } from "@/data/products";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-type Response = {
+export type ProductResponse = {
   data: Product[];
 }
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Response>
+  res: NextApiResponse<ProductResponse>
 ) {
   if (req.method !== "GET") return res.status(404);
 
