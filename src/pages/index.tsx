@@ -1,4 +1,5 @@
 import ProductList from '@/components/ProductList'
+import SearchBar from '@/components/SearchBar';
 import useFetchData from '@/hooks/useFetchData'
 import { Inter } from 'next/font/google'
 
@@ -11,7 +12,10 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <ProductList />
+      <div className="w-96 flex flex-col gap-8">
+        <SearchBar />
+        <ProductList />
+      </div>
     </main>
   )
 }
